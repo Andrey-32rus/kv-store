@@ -16,7 +16,7 @@ COPY --from=builder /app/kvstore /kvstore
 # Copy Tarantool init script
 COPY init.lua /init.lua
 
-EXPOSE 3301 8080
+EXPOSE 8080
 
 # Entrypoint script: start Tarantool and Go app
 CMD tarantool /init.lua & sleep 3 && ./kvstore
